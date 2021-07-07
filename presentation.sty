@@ -1,0 +1,38 @@
+% Declare that this style file requires at least LaTeX version 2e.
+\NeedsTeXFormat{LaTeX2e}
+
+% Provide the name of your page, the date it was last updated, and a comment about what it's used for
+\ProvidesPackage{mystyle}[2010/07/28 BBischof's custom LaTeX style]
+
+% Now paste your code from the preamble here
+%% Load packages and settings
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\RequirePackage{tabulary}
+\RequirePackage[normalem]{ulem}
+
+\usetikzlibrary{shapes,decorations,arrows,calc,arrows.meta,fit,positioning}
+\tikzset{
+    -Latex,auto,node distance =1 cm and 1 cm,semithick,
+    state/.style ={ellipse, draw, minimum width = 0.7 cm},
+    point/.style = {circle, draw, inner sep=0.04cm,fill,node contents={}},
+    bidirected/.style={Latex-Latex,dashed},
+    el/.style = {inner sep=2pt, align=left, sloped}
+}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\beamertemplatenavigationsymbolsempty
+\hypersetup{pdfpagemode=UseNone}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Overview}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+% Finally, we'll use \endinput to indicate that LaTeX can stop reading this file. LaTeX will ignore anything after this line.
+\endinput
